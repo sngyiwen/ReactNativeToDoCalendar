@@ -52,8 +52,8 @@ export default function ShowScreen({ navigation, route }) {
   }
 
   function editPost() {
-    navigation.navigate("Edit");
-  }
+    // navigation.navigate("Edit");
+    navigation.navigate("Edit", { post: post })  }
 
   return (
     <View style={styles.container}>

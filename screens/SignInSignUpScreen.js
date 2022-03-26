@@ -95,7 +95,7 @@ export default function SignInSignUpScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{isLogIn ? "Log In" : "Sign Up"}</Text>
+      <Text style={styles.title}>{isLogIn ? "Log In 👋🏼" : "Sign Up 🤙🏻"}</Text>
       <View style={styles.inputView}>
         <TextInput
           style={styles.textInput}
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   inputView: {
-    backgroundColor: "#FFC0CB",
+    backgroundColor: "#d8d8d8",
     borderRadius: 30,
     width: "70%",
     height: 45,

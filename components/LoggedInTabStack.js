@@ -23,9 +23,9 @@ export default function LoggedInStack() {
 
           if (route.name === 'To Do List') {
             iconName = "pencil"
-          } else if (route.name === 'Settings') {
-            iconName = "cog"
-          } else if (route.name === 'Calendar') {
+          } else if (route.name === 'Profile') {
+            iconName = "user"
+          } else if (route.name === 'Meetings') {
             iconName = "calendar"
           }
           // You can return any component that you like here!
@@ -43,8 +43,8 @@ export default function LoggedInStack() {
         }
       }}>
         <Tab.Screen name="To Do List" component={BlogStack} />
-        <Tab.Screen name="Calendar" component={CalendarStack} />
-        <Tab.Screen name="Settings" component={AccountStack} />
+        <Tab.Screen name="Meetings" component={CalendarStack} />
+        <Tab.Screen name="Profile" component={AccountStack} />
       </Tab.Navigator>
   )
 } 
