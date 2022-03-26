@@ -11,7 +11,7 @@ import {
   UIManager,
   View,
   Platform,
-
+  Image,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { API, API_LOGIN, API_SIGNUP } from "../constants/API";
@@ -67,7 +67,7 @@ export default function SignInSignUpScreen({ navigation }) {
 
   async function signUp() {
     if (password != confirmPassword) {
-      setErrorText("Your passwords don't match. Check and try again.")
+      setErrorText("Your passwords don't match. Check and try again.");
     } else {
       try {
         setLoading(true);
@@ -95,6 +95,13 @@ export default function SignInSignUpScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: "https://i.ibb.co/Wc18bCN/todo-app-icon-520x520-e97264b2a6d3.png",
+        }}
+      />
+      <Text style={styles.appName}> Productivity.io</Text>
       <Text style={styles.title}>{isLogIn ? "Log In 👋🏼" : "Sign Up 🤙🏻"}</Text>
       <View style={styles.inputView}>
         <TextInput
@@ -116,7 +123,7 @@ export default function SignInSignUpScreen({ navigation }) {
           onChangeText={(pw) => setPassword(pw)}
         />
       </View>
-      
+
       {isLogIn ? (
         <View />
       ) : (
@@ -133,7 +140,10 @@ export default function SignInSignUpScreen({ navigation }) {
       <View />
       <View>
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity style={styles.button} onPress={isLogIn ? login : signUp}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={isLogIn ? login : signUp}
+          >
             <Text style={styles.buttonText}>
               {/* {" "} */}
               {isLogIn ? "Log In" : "Sign Up"}{" "}
@@ -165,6 +175,8 @@ export default function SignInSignUpScreen({ navigation }) {
             : "Already have an account? Log in here."}
         </Text>
       </TouchableOpacity>
+      <Text style={styles.footer}> Made with ❤️ by Jack Sng</Text>
+
     </View>
   );
 }
@@ -214,4 +226,14 @@ const styles = StyleSheet.create({
     color: "red",
     marginTop: 20,
   },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  footer:{
+    marginTop: 180,
+  },
+  appName:{
+    marginTop: 10,
+  }
 });
